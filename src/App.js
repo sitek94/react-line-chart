@@ -1,5 +1,5 @@
 import React from 'react';
-import { scaleLinear, extent, format } from 'd3';
+import { scaleLinear, extent, timeFormat, scaleTime } from 'd3';
 
 import { useData } from './useData';
 import { AxisBottom } from './AxisBottom';
@@ -34,11 +34,10 @@ export const App = () => {
   const yAxisLabel = 'Temperature';
 
   // x axis tick formatter 
-  const siFormat = format('.2s');
-  const xAxisTickFormat = tickValue => siFormat(tickValue).replace('G', 'B');
+  const xAxisTickFormat = timeFormat('%a');
   
   // x scale
-  const xScale = scaleLinear()
+  const xScale = scaleTime()
     .domain(extent(data, xValue))
     .range([0, innerWidth])
     .nice();
@@ -46,7 +45,7 @@ export const App = () => {
   // y scale
   const yScale = scaleLinear()
     .domain(extent(data, yValue))
-    .range([0, innerHeight])
+    .range([innerHeight, 0])
     .nice();
 
   return (
