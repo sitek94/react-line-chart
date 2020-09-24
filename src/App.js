@@ -28,10 +28,10 @@ export const App = () => {
   if (!data) return <pre>Loading...</pre>;
   
   // Values accessors
-  const xValue = (d) => d.sepal_length;
-  const xAxisLabel = 'Sepal Length';
-  const yValue = (d) => d.sepal_width;
-  const yAxisLabel = 'Sepal Width';
+  const xValue = (d) => d.timestamp;
+  const xAxisLabel = 'Time';
+  const yValue = (d) => d.temperature;
+  const yAxisLabel = 'Temperature';
 
   // x axis tick formatter 
   const siFormat = format('.2s');
