@@ -33,12 +33,22 @@ svg {
   }
 }
 
-.mark {
-  fill: #E6842A;
-  transition: fill .5s;
+.marks {
+  path {
+    fill: none;
+    stroke: #E6842A;
+    stroke-width: 5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
 
-  &:hover {
-    fill: #F6B656;
+  circle {
+    fill: #E6842A;
+    transition: fill .5s;
+
+    &:hover {
+      fill: #F6B656;
+    }
   }
 }
 

@@ -79,7 +79,7 @@ export const App = () => {
         </text>
         <Marks
           data={data}
-          radius={10}
+          radius={4}
           xScale={xScale}
           yScale={yScale}
           xValue={xValue}
